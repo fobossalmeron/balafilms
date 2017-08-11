@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+	<style>
+		div {
+	  margin-top: 3px;
+	  padding: 0 10px;
+	}
+	html, body{height: 100%}
+	body{
+		background: #aaa
+	}
+	button {
+	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  cursor: pointer;
+	  font-weight: 700;
+	  font-size: 13px;
+	  padding: 8px 18px 10px;
+	  line-height: 1;
+	  color: #fff;
+	  background: #345;
+	  border: 0;
+	  border-radius: 4px;
+	  margin-left: 0.75em;
+	}
+	#play-button{
+		cursor: pointer;
+	}
+
+	p {
+	  display: inline-block;
+	  margin-left: 10px;
+	}
+	#full{
+		width: 100%;
+		height: auto;
+	}
+	.embed-container{ 
+		position: relative; 
+		padding-bottom: 56.25%; 
+		height: 0; 
+		overflow: hidden; 
+		max-width: 100%; 
+	} 
+	.embed-container iframe, .embed-container object, .embed-container embed{ 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	</style>
+
+</head>
+<body>
+
+	
+	<section class="embed-container">
+		<iframe src="http://player.vimeo.com/video/80312270?api=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="video"></iframe>
+	</section>
+	<img id="play-button" src="img/play.svg" alt="">
+		<img id="pause-button" src="img/play.svg" alt="">
+
+		<script src="js/jquery.js"></script>
+	<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+	<script>
+$(function() {
+	var iframe = document.getElementById('video');
+
+	// $f == Froogaloop
+	var player = $f(iframe);
+	var playButton = document.getElementById("play-button");
+	playButton.addEventListener("click", function() {
+	  player.api("play");
+	});
+
+	var pauseButton = document.getElementById("pause-button");
+	pauseButton.addEventListener("click", function() {
+	  player.api("pause");
+	});
+
+});
+	</script>
+
+</body>
+
+</html>
