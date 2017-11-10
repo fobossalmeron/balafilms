@@ -217,6 +217,7 @@ header#inicio {
     background-size: cover;
     -o-background-size: cover;
     text-align: center;
+    background-color: #313134;
     color: #fff;
     min-height: 100%;
     height: 100%;
